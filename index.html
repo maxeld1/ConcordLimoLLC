@@ -1,0 +1,169 @@
+<!-- =============================================================
+DEVELOPER INFORMATION
+-------------------------------------------------------------
+Developed by: Max Eldabbas
+Email: maxeldabbas86@gmail.com
+Website/Portfolio:
+GitHub: www.github.com/maxeld1
+Date Created:
+License: Proprietary — Not for redistribution without permission.
+-------------------------------------------------------------
+
+
+SALON WEBSITE TEMPLATE — CONFIGURATION NOTES
+-------------------------------------------------------------
+
+BRAND INFO
+- Salon Name: "Industry Salon"
+- Tagline:
+- Logo:
+
+
+CONTACT INFO
+- Phone:
+- Email:
+- Address:
+
+
+HOURS
+- Example: Mon–Fri 9–7, Sat 9–4
+- Update in both HTML + JSON-LD metadata
+
+
+SEO + METADATA
+- Update <title>, <meta name="description">, and Open Graph tags
+- Update JSON-LD LocalBusiness Schema (name, phone, address, social links)
+
+============================================================= -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Industry Salon | Personalized Hair. Elevated Experience.</title>
+  <meta name="description" content="Industry Salon — modern cuts, color, and styling. Book online or call." />
+
+  <!-- Use relative paths (no leading /) -->
+  <link rel="icon" href="assets/icons/industry_salon_logo.png" type="image/png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <meta property="og:title" content="Industry Salon — Personalized Hair. Elevated Experience." />
+  <meta property="og:description" content="Modern salon in Newtown Square. Book online or call." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.industrysalonlounge.com" />
+  <meta property="og:image" content="" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Industry Salon",
+    "telephone": "(484) 420-4082",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4631 W. Chester Pike",
+      "addressLocality": "Newtown Square",
+      "addressRegion": "PA",
+      "postalCode": "19073",
+      "addressCountry": "US"
+    },
+    "openingHours": ["Mo-Th 09:00-20:00","Fr-Sa 08:00-14:00"],
+    "url": "https://www.industrysalonlounge.com",
+    "sameAs": ["https://instagram.com/industrysalonnewtownsquare"]
+  }
+  </script>
+</head>
+<body>
+
+<div data-include="header"></div>
+
+<main>
+  <section class="hero">
+    <div class="container two" style="align-items:center">
+      <div>
+        <!-- <span class="btn" style="background:var(--panel-soft)">Inclusive • Woman-owned</span> -->
+        <h1 class="main-title">PERSONALIZED HAIR. ELEVATED EXPERIENCE.</h1>
+        <p class="page-body">Where every service is tailored and every guest feels at home.</p>
+        <div class="hero-actions" style="display:flex;gap:12px;margin-top:14px; justify-content: center">
+          <a class="btn btn-primary btn-alta"
+             href="https://na2.meevo.com/CustomerPortal/login?tenantId=502125&locationId=502944">Book an Appointment</a>
+          <a class="btn btn-glass btn-alta" href="/services/">See Services</a>
+        </div>
+      </div>
+      <!-- <div class="showcase">
+        <img src="assets/images/hero-placeholder.jpg" alt="Salon interior">
+      </div> -->
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+
+      <div class="grid three services-grid">
+        <div class="card"><h3>Coloring</h3><p class="muted">Face Framing Foils • Glaze • Highlights</p></div>
+        <div class="card"><h3>Hair Removal</h3><p class="muted">Brow Tint • Brow Wax • Lip Wax</p></div>
+        <div class="card"><h3>Hair Treatments</h3><p class="muted">Deep Conditioning • Keratin Hair Treatment</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reviews">
+    <div class="container">
+      <h2 class="section-title">Reviews</h2>
+
+      <div class="reviews-track" aria-label="Customer reviews">
+        <article class="review-card">
+          <p class="review-text">“Extremely happy customer here! Marybeth is truly an expert stylist!”</p>
+          <div class="review-meta">
+            <span class="review-name">— Kellyann C.</span>
+            <span class="review-stars" aria-label="5 stars">★★★★★</span>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <p class="review-text">“The best place. Love Ali and Lisa so much❤️”</p>
+          <div class="review-meta">
+            <span class="review-name">— Emily L.</span>
+            <span class="review-stars" aria-label="5 stars">★★★★★</span>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <p class="review-text">“I always leave feeling like a million bucks and constantly get stopped by strangers asking about my color. The talent and care here are truly unmatched, and the salon’s aesthetic is absolutely beautiful.”</p>
+          <div class="review-meta">
+            <span class="review-name">— K. S.</span>
+            <span class="review-stars" aria-label="5 stars">★★★★★</span>
+          </div>
+        </article>
+
+        <!-- add more review-card articles as needed -->
+      </div>
+
+      <div class="reviews-actions">
+        <button class="reviews-btn" type="button" data-dir="-1" aria-label="Previous review">‹</button>
+        <button class="reviews-btn" type="button" data-dir="1" aria-label="Next review">›</button>
+      </div>
+
+      <div class="reviews-cta">
+        <a
+                class="btn btn-primary"
+                href="https://search.google.com/local/writereview?placeid=ChIJNW6z0wfrxokRMa1vWya2qQ4"
+                target="_blank"
+                rel="noopener"
+        >Leave a Review
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="js/main.js"></script>
+<script src="js/partials.js"></script>
+
+</body>
+</html>
