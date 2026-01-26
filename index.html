@@ -1,79 +1,83 @@
-<!-- =============================================================
-DEVELOPER INFORMATION
--------------------------------------------------------------
-Developed by: Max Eldabbas
-Email: maxeldabbas86@gmail.com
-Website/Portfolio:
-GitHub: www.github.com/maxeld1
-Date Created:
-License: Proprietary — Not for redistribution without permission.
--------------------------------------------------------------
+<!--
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Concord Limo LLC — Website Source
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Built & maintained by: Max Eldabbas
+Contact: maxeldabbas86@gmail.com
+GitHub: github.com/maxeld1
 
+License: Proprietary
+This codebase is provided for Concord Limo LLC use only.
+No redistribution, reuse, or resale without written permission.
 
-SALON WEBSITE TEMPLATE — CONFIGURATION NOTES
--------------------------------------------------------------
+Notes for future edits
+• Update BRAND + CONTACT + HOURS below (used across pages and schema).
+• Keep SEO fields in sync: <title>, meta description, Open Graph, JSON-LD.
+• If you add a booking system later, replace “Request a Quote” CTAs first.
 
-BRAND INFO
-- Salon Name: "Industry Salon"
-- Tagline:
-- Logo:
+BRAND
+• Company Name: Concord Limo LLC
+• Tagline: (example) “Private rides for any event.”
+• Primary Fleet: Cadillac SUV + Sprinter Vans
+• Service Area: (cities/region)
 
-
-CONTACT INFO
-- Phone:
-- Email:
-- Address:
-
+CONTACT
+• Phone: (###) ###-####
+• Email: hello@domain.com
+• Location/Base: (City, State)
 
 HOURS
-- Example: Mon–Fri 9–7, Sat 9–4
-- Update in both HTML + JSON-LD metadata
+• (Example) Mon–Sun 7am–11pm
+• Keep consistent in footer + JSON-LD
 
+SEO
+• Title format: Concord Limo | Private Chauffeur & Event Transportation
+• Description: 140–160 chars, mention Cadillac SUV + Sprinters + area.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-->
 
-SEO + METADATA
-- Update <title>, <meta name="description">, and Open Graph tags
-- Update JSON-LD LocalBusiness Schema (name, phone, address, social links)
-
-============================================================= -->
 
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Industry Salon | Personalized Hair. Elevated Experience.</title>
-  <meta name="description" content="Industry Salon — modern cuts, color, and styling. Book online or call." />
+  <title>Concord Limo | Private Chauffeur & Event Transportation</title>
+  <meta name="description" content="Private rides for any event—Cadillac SUV and Sprinter vans available. Professional drivers, flexible pickup times, and fast quotes. Serving the greater Philadelphia area." />
 
-  <!-- Use relative paths (no leading /) -->
-  <link rel="icon" href="assets/icons/industry_salon_logo.png" type="image/png" />
-  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icons/concord-favicon.png" type="image/png" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <meta property="og:title" content="Industry Salon — Personalized Hair. Elevated Experience." />
-  <meta property="og:description" content="Modern salon in Newtown Square. Book online or call." />
+  <meta property="og:title" content="Concord Limo | Private Chauffeur & Event Transportation" />
+  <meta property="og:description" content="Private rides for any event—Cadillac SUV and Sprinter vans available. Fast quotes and professional service." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.industrysalonlounge.com" />
-  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="assets/images/og-concord.jpg" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HairSalon",
-    "name": "Industry Salon",
-    "telephone": "(484) 420-4082",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "4631 W. Chester Pike",
-      "addressLocality": "Newtown Square",
-      "addressRegion": "PA",
-      "postalCode": "19073",
-      "addressCountry": "US"
-    },
-    "openingHours": ["Mo-Th 09:00-20:00","Fr-Sa 08:00-14:00"],
-    "url": "https://www.industrysalonlounge.com",
-    "sameAs": ["https://instagram.com/industrysalonnewtownsquare"]
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Concord Limo LLC",
+      "description": "Private chauffeur and event transportation with Cadillac SUV and Sprinter van options.",
+      "telephone": "+1-610-547-7845",
+      "priceRange": "$$",
+      "areaServed": "Greater Philadelphia Area",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Broomall",
+        "addressRegion": "PA",
+        "postalCode": "19008",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "23:00" }
+      ],
+      "url": "",
+      "sameAs": [
+        "https://instagram.com/"
+      ]
+    }
   </script>
 </head>
 <body>
@@ -82,79 +86,88 @@ SEO + METADATA
 
 <main>
   <section class="hero">
-    <div class="container two" style="align-items:center">
-      <div>
-        <!-- <span class="btn" style="background:var(--panel-soft)">Inclusive • Woman-owned</span> -->
-        <h1 class="main-title">PERSONALIZED HAIR. ELEVATED EXPERIENCE.</h1>
-        <p class="page-body">Where every service is tailored and every guest feels at home.</p>
-        <div class="hero-actions" style="display:flex;gap:12px;margin-top:14px; justify-content: center">
-          <a class="btn btn-primary btn-alta"
-             href="https://na2.meevo.com/CustomerPortal/login?tenantId=502125&locationId=502944">Book an Appointment</a>
-          <a class="btn btn-glass btn-alta" href="/services/">See Services</a>
+    <div class="container">
+      <div class="hero-inner">
+<!--        <a class="brand brand-center" href="" aria-label="Concord Limo Home">-->
+<!--          <img-->
+<!--                  src="/assets/images/concord_limo_logo.png"-->
+<!--                  alt="Concord Limo Logo"-->
+<!--                  class="brand-logo brand-bigger"-->
+<!--          />-->
+<!--        </a>-->
+        <img
+          src="/assets/images/concord_limo_logo.png"
+          alt="Concord Limo Logo"
+          class="brand-logo brand-bigger hero-logo"
+        />
+        <p class="page-body">
+          Private transportation for any event — Luxury SUV and Sprinter van
+          options for groups of any size.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="contact/" aria-label="Request a quote">
+            Request a Quote
+          </a>
+          <a class="btn btn-glass" href="services/" aria-label="View services">
+            View Services
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <span>Professional drivers</span>
+          <span class="dot">•</span>
+          <span>Flexible pickup times</span>
+          <span class="dot">•</span>
+          <span>Fast responses</span>
         </div>
       </div>
-      <!-- <div class="showcase">
-        <img src="assets/images/hero-placeholder.jpg" alt="Salon interior">
-      </div> -->
     </div>
   </section>
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Our Services</h2>
+      <h2 class="section-title">Services</h2>
 
       <div class="grid three services-grid">
-        <div class="card"><h3>Coloring</h3><p class="muted">Face Framing Foils • Glaze • Highlights</p></div>
-        <div class="card"><h3>Hair Removal</h3><p class="muted">Brow Tint • Brow Wax • Lip Wax</p></div>
-        <div class="card"><h3>Hair Treatments</h3><p class="muted">Deep Conditioning • Keratin Hair Treatment</p></div>
+        <div class="card card-center">
+          <h3>Event Transportation</h3>
+          <p class="muted">Concerts, sports games, birthdays, nights out—arrive together and leave on your schedule.</p>
+        </div>
+
+        <div class="card card-center">
+          <h3>Airport & Travel</h3>
+          <p class="muted">Reliable pickups and drop-offs with flight-aware timing and luggage-friendly space.</p>
+        </div>
+
+        <div class="card card-center">
+          <h3>Group Rides</h3>
+          <p class="muted">Cadillac SUV for smaller groups, Sprinter vans available for larger parties.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section reviews">
     <div class="container">
-      <h2 class="section-title">Reviews</h2>
+      <h2 class="section-title">What to Expect</h2>
 
-      <div class="reviews-track" aria-label="Customer reviews">
-        <article class="review-card">
-          <p class="review-text">“Extremely happy customer here! Marybeth is truly an expert stylist!”</p>
-          <div class="review-meta">
-            <span class="review-name">— Kellyann C.</span>
-            <span class="review-stars" aria-label="5 stars">★★★★★</span>
-          </div>
-        </article>
-
-        <article class="review-card">
-          <p class="review-text">“The best place. Love Ali and Lisa so much❤️”</p>
-          <div class="review-meta">
-            <span class="review-name">— Emily L.</span>
-            <span class="review-stars" aria-label="5 stars">★★★★★</span>
-          </div>
-        </article>
-
-        <article class="review-card">
-          <p class="review-text">“I always leave feeling like a million bucks and constantly get stopped by strangers asking about my color. The talent and care here are truly unmatched, and the salon’s aesthetic is absolutely beautiful.”</p>
-          <div class="review-meta">
-            <span class="review-name">— K. S.</span>
-            <span class="review-stars" aria-label="5 stars">★★★★★</span>
-          </div>
-        </article>
-
-        <!-- add more review-card articles as needed -->
+      <div class="grid three">
+        <div class="card card-center">
+          <h3>On-Time, Every Time</h3>
+          <p class="muted">Clear pickup coordination and dependable arrival windows.</p>
+        </div>
+        <div class="card card-center">
+          <h3>Comfort & Privacy</h3>
+          <p class="muted">A clean, quiet ride—ideal for events, conversations, or just relaxing.</p>
+        </div>
+        <div class="card card-center">
+          <h3>Right Vehicle for the Group</h3>
+          <p class="muted">From SUV to Sprinter, we match the ride to the party size.</p>
+        </div>
       </div>
 
-      <div class="reviews-actions">
-        <button class="reviews-btn" type="button" data-dir="-1" aria-label="Previous review">‹</button>
-        <button class="reviews-btn" type="button" data-dir="1" aria-label="Next review">›</button>
-      </div>
-
-      <div class="reviews-cta">
-        <a
-                class="btn btn-primary"
-                href="https://search.google.com/local/writereview?placeid=ChIJNW6z0wfrxokRMa1vWya2qQ4"
-                target="_blank"
-                rel="noopener"
-        >Leave a Review
-        </a>
+      <div class="reviews-cta" style="margin-top:22px;">
+        <a class="btn btn-primary" href="contact/">Get Pricing</a>
       </div>
     </div>
   </section>

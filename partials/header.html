@@ -1,57 +1,44 @@
 <!-- /partials/header.html -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-<!--Libre Franklin-->
+<!-- Manrope (single brand font) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-<!--Markazi Text-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap" rel="stylesheet">
-
-<!--Merriweather-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
-
-<!--Scheherazade New-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <header>
-  <div class="container nav nav-centered">
+  <div class="container nav">
 
-    <nav id="mobile-menu" class="nav-left site-nav">
+    <!-- Mobile menu panel (your JS toggles #mobile-menu.is-open) -->
+    <nav id="mobile-menu" class="site-nav">
       <ul>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/stylists/">Stylists</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="services/">Services</a></li>
+        <li><a href="fleet/">Fleet</a></li>
+        <li><a href="service-area/">Service Area</a></li>
+        <li><a href="contact/">Contact</a></li>
 
+        <!-- Mobile-only secondary CTA -->
         <li class="mobile-only">
-          <a href="https://na2.meevo.com/CustomerPortal/egift/order/gift-type?tenantId=502125&locationId=502944">
-            Gift Card
-          </a>
+          <a href="contact/">Call / Text to Book</a>
         </li>
       </ul>
     </nav>
 
-    <a class="brand brand-center" href="/">
-      <img src="/assets/images/industry_salon_logo.png"
-           alt="Industry Salon Logo"
-           class="brand-logo">
+    <!-- Brand -->
+    <a class="brand brand-center" href="./" aria-label="Concord Limo Home">
+      <img
+              src="/assets/images/concord_limo_logo.png"
+              alt="Concord Limo Logo"
+              class="brand-logo"
+      />
     </a>
 
+    <!-- Right side actions -->
     <div class="nav-right">
 
+      <!-- Mobile header action row -->
       <div class="mobile-header-actions">
-        <a class="btn btn-primary mobile-book"
-           href="https://na2.meevo.com/CustomerPortal/login?tenantId=502125&locationId=502944">
-          Book Now
+        <a class="btn btn-primary mobile-book" href="contact/">
+          Request a Quote
         </a>
 
         <button class="menu-toggle"
@@ -66,14 +53,19 @@
         </button>
       </div>
 
-      <a class="nav-utility desktop-only"
-         href="https://na2.meevo.com/CustomerPortal/egift/order/gift-type?tenantId=502125&locationId=502944">
-        Gift Card
-      </a>
+      <!-- Desktop nav links -->
+      <nav class="site-nav desktop-only" aria-label="Primary navigation">
+        <ul>
+          <li><a href="services/">Services</a></li>
+          <li><a href="fleet/">Fleet</a></li>
+          <li><a href="service-area/">Service Area</a></li>
+          <li><a href="contact/">Contact</a></li>
+        </ul>
+      </nav>
 
-      <a class="btn btn-primary cta-book desktop-only"
-         href="https://na2.meevo.com/CustomerPortal/login?tenantId=502125&locationId=502944">
-        Book Now
+      <!-- Desktop CTA -->
+      <a class="btn btn-primary cta-book desktop-only" href="contact/">
+        Request a Quote
       </a>
     </div>
 
