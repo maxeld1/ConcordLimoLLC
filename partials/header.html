@@ -8,39 +8,37 @@
 <header>
   <div class="container nav">
 
-    <!-- Mobile menu panel (your JS toggles #mobile-menu.is-open) -->
+    <!-- Mobile menu panel -->
     <nav id="mobile-menu" class="site-nav">
       <ul>
-        <li><a href="{{P}}pages/services/">Services</a></li>
-        <li><a href="{{P}}pages/fleet/">Fleet</a></li>
-        <li><a href="{{P}}pages/service-area/">Service Area</a></li>
-        <li><a href="{{P}}pages/contact/">Contact</a></li>
-
-        <!-- Mobile-only secondary CTA -->
-        <li class="mobile-only">
-          <a href="{{P}}pages/contact/">Call / Text to Book</a>
-        </li>
+        <li><a href="{{P}}pages/services.html">Services</a></li>
+        <li><a href="{{P}}pages/fleet.html">Fleet</a></li>
+        <li><a href="{{P}}pages/service-area.html">Service Area</a></li>
+        <li><a href="{{P}}pages/contact.html">Contact</a></li>
+        <li class="mobile-only"><a href="{{P}}pages/contact.html">Call / Text to Book</a></li>
       </ul>
     </nav>
 
-    <!-- Brand -->
-    <a class="brand brand-center" href="{{P}}index.html/"
-       aria-label="Concord Limo Home">
-      <img
-              src="/assets/images/concord_limo_logo.png"
-              alt="Concord Limo Logo"
-              class="brand-logo"
-      />
+    <!-- Brand (LEFT on desktop, centered on mobile via CSS) -->
+    <a class="brand" href="{{P}}index.html" aria-label="Concord Limo Home">
+      <img src="/assets/images/concord_limo_logo.png" alt="Concord Limo Logo" class="brand-logo" />
     </a>
 
-    <!-- Right side actions -->
+    <!-- Desktop nav (CENTER) -->
+    <nav class="site-nav desktop-only" aria-label="Primary navigation">
+      <ul>
+        <li><a href="{{P}}pages/services.html">Services</a></li>
+        <li><a href="{{P}}pages/fleet.html">Fleet</a></li>
+        <li><a href="{{P}}pages/service-area.html">Service Area</a></li>
+        <li><a href="{{P}}pages/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right side actions (CTA + mobile controls) -->
     <div class="nav-right">
 
-      <!-- Mobile header action row -->
       <div class="mobile-header-actions">
-        <a class="btn btn-primary mobile-book" href="{{P}}pages/contact/">
-          Request a Quote
-        </a>
+        <a class="btn btn-primary mobile-book" href="{{P}}pages/contact.html">Request a Quote</a>
 
         <button class="menu-toggle"
                 aria-expanded="false"
@@ -54,18 +52,7 @@
         </button>
       </div>
 
-      <!-- Desktop nav links -->
-      <nav class="site-nav desktop-only" aria-label="Primary navigation">
-        <ul>
-          <li><a href="{{P}}pages/services/">Services</a></li>
-          <li><a href="{{P}}pages/fleet/">Fleet</a></li>
-          <li><a href="{{P}}pages/service-area/">Service Area</a></li>
-          <li><a href="{{P}}pages/contact/">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Desktop CTA -->
-      <a class="btn btn-primary cta-book desktop-only" href="{{P}}pages/contact/">
+      <a class="btn btn-primary cta-book desktop-only" href="{{P}}pages/contact.html">
         Request a Quote
       </a>
     </div>
