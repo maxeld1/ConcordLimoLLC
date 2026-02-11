@@ -5,8 +5,12 @@
   const INCLUDE_ATTR = "data-include";
   const PARTIALS_DIR = "partials";
 
-  // If we're on a page under /pages/, prefix should be "../"
-  const isSubpage = location.pathname.includes("/pages/");
+  // Prefix for subpages like /services/ or /fleet/ when site is hosted in a subdir.
+  const cleanPath = location.pathname.replace(/\/+$/, "");
+  const parts = cleanPath.split("/").filter(Boolean);
+  const last = parts[parts.length - 1] || "";
+  const dirParts = last.includes(".") ? parts.slice(0, -1) : parts;
+  const isSubpage = dirParts.length > 1;
   const P = isSubpage ? "../" : "";
 
   async function fetchText(url) {
