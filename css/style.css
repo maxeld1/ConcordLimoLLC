@@ -21,7 +21,9 @@
   --glow: 0 0 0.85rem rgba(200,168,106,.18);
 
   /* Type */
-  --font: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font: var(--font-sans);
 
   /* Layout */
   --maxw: 1160px;
@@ -73,7 +75,8 @@ html{
 body{
   margin:0;
   background:
-          radial-gradient(1200px 600px at 50% -10%, rgba(255,215,140,.06), transparent 60%),
+          radial-gradient(1100px 560px at 18% -10%, rgba(255,215,140,.10), transparent 60%),
+          radial-gradient(900px 520px at 82% -6%, rgba(80,120,140,.10), transparent 60%),
           linear-gradient(180deg, #0b0c0f 0%, #050608 100%);
   color: #eaeaea;
   font-family: var(--font), serif;
@@ -127,6 +130,7 @@ h1,h2,h3,h4,h5,h6{
   margin: 0 0 .6rem;
   color: var(--text);
   letter-spacing: -0.01em;
+  font-family: var(--font-display);
 }
 h1{
   font-size: clamp(2.4rem, 4.6vw, 4.0rem);
@@ -157,6 +161,7 @@ h3{
   letter-spacing:.18em;
   text-transform:uppercase;
   color: rgba(255,255,255,.75);
+  margin: 6px auto 10px;
 }
 .kicker::before{
   content:"";
@@ -177,6 +182,17 @@ main{ flex:1; }
 
 .section{
   padding: clamp(46px, 6vw, 86px) 0;
+  position: relative;
+}
+.section::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: clamp(22px, 4vw, 60px);
+  right: clamp(22px, 4vw, 60px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,168,106,.35), transparent);
+  opacity: .65;
 }
 
 /* Grid system */
@@ -566,16 +582,30 @@ header .mobile-book{
           radial-gradient(500px 260px at 50% 32%, rgba(214,170,96,.14), transparent 60%);
   pointer-events: none;
 }
+.hero::after{
+  content: "";
+  position: absolute;
+  inset: -80px 0 auto 0;
+  height: 260px;
+  background: radial-gradient(620px 160px at 50% 0%, rgba(200,168,106,.22), transparent 70%);
+  pointer-events: none;
+}
 
 .hero-inner{
   max-width: 920px;
   margin: 0 auto;
   text-align: center;
 }
+.hero-logo{
+  width: clamp(190px, 24vw, 280px);
+  margin: 0 auto 12px;
+  filter: drop-shadow(0 18px 32px rgba(0,0,0,.55));
+}
 
 .main-title{
   margin: 0 0 .75rem;
   letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 .page-body{
@@ -640,6 +670,7 @@ header .mobile-book{
   letter-spacing: .18em;
   font-weight: 800;
   font-size: .95rem;
+  font-family: var(--font-sans);
   color: rgba(255,255,255,.78);
   margin: 0 0 22px;
 }
@@ -657,13 +688,24 @@ header .mobile-book{
 .card{
   position: relative;
   border-radius: var(--radius);
-  background: linear-gradient(180deg, #16181d, #0f1013);
-  border: 1px solid rgba(255,255,255,.06);
-  box-shadow: 0 20px 50px rgba(0,0,0,.6);
+  background:
+          linear-gradient(160deg, rgba(255,255,255,.08), rgba(255,255,255,.02)),
+          linear-gradient(180deg, #121418, #0c0d11);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 28px 70px rgba(0,0,0,.55);
   padding: 22px;
   transition: transform .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
   overflow:hidden;
   text-align: left;
+}
+.card::after{
+  content:"";
+  position:absolute;
+  inset: 0;
+  background: radial-gradient(220px 120px at 18% 0%, rgba(200,168,106,.18), transparent 60%);
+  opacity: .0;
+  transition: opacity .22s var(--ease);
+  pointer-events:none;
 }
 
 .card.card-center {
@@ -687,12 +729,17 @@ header .mobile-book{
 
 .card:hover{
   transform: translateY(-3px);
-  background: rgba(255,255,255,.06);
+  background:
+          linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,.03)),
+          linear-gradient(180deg, #14161b, #0d0e12);
   border-color: rgba(200,168,106,.22);
 }
 .card:hover::before{
   opacity: 1;
   transform: translateX(0);
+}
+.card:hover::after{
+  opacity: 1;
 }
 
 .card h3{
@@ -917,6 +964,37 @@ footer .cols.footer-new{
   letter-spacing: .18em;
   text-transform: uppercase;
   color: rgba(255,255,255,.52);
+}
+.page-title{
+  text-align:center;
+  font-family: var(--font-display);
+  font-size: clamp(2.0rem, 4vw, 3.1rem);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.card-note{
+  margin-top: 12px;
+  color: rgba(255,255,255,.66);
+}
+
+@keyframes fade-up{
+  from{ opacity: 0; transform: translateY(16px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+.hero-inner,
+.section-title,
+.card{
+  animation: fade-up .8s var(--ease) both;
+}
+.section-title{ animation-delay: .05s; }
+.card{ animation-delay: .12s; }
+@media (prefers-reduced-motion: reduce){
+  .hero-inner,
+  .section-title,
+  .card{
+    animation: none;
+  }
 }
 .footer-bottom-inner a{ color: rgba(255,255,255,.58); }
 .footer-bottom-inner a:hover{ color: var(--brand); }
